@@ -1,10 +1,9 @@
-//@import "node_modules/bootstrap/scss/bootstrap";
 .block{
   max-width: 100%;
   max-height: 100%;
 }
 strong {
-  font-weight: 900; /* Товстий шрифт для важливих елементів */
+  font-weight: 900;
 }
 * {
   font-family: "Montserrat", sans-serif;
@@ -18,17 +17,13 @@ body {
   color: #000;
   background-color: #ffffff;
   overflow-x: hidden;
-  margin: 0;
-  padding: 0;
-  //height: 100vh; /* Займати всю висоту екрану */
 }
 .resume {
    width: 100%;
    height: 100%;
    margin: 0 auto;
-   background-color: white;
+  // background-color: white;
    border-radius: 8px;
-   //box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
    padding: 0;
    display: flex;
    flex-direction: row;
@@ -39,26 +34,25 @@ body {
   justify-content: center;
 }
 .left-col {
-      background-color: #ffffff;
       width: 100%;
       align-items: flex-start;
       padding: 60px;
       margin-top: 100px;
 }
+.right-col {
+   width: 885px;
+   height: auto;
+ }
 .header{
   margin-top: -150px;
 }
-.name {
-  color: #000; /* Чорний колір тексту */
-  font-size: 100px; /* Розмір шрифту для імені */
-  font-weight: 400; /* Нормальна товщина шрифту */
- // margin: 0; /* Без додаткових відступів */
+.name, .surname {
+  color: #000;
+  font-size: 100px;
+  font-weight: 400;
 }
 .surname {
-  color: #000; /* Чорний колір тексту */
-  font-size: 100px; /* Розмір шрифту для прізвища */
-  font-weight: 700; /* Товстий шрифт */
-  margin-top: -20px; /* Відступ зверху для наближення до імені */
+  margin-top: -20px;
 }
 .title{
     color: #000;
@@ -67,23 +61,38 @@ body {
   }
 .under_header{
   margin-top: 40px;
-
 }
 .inf1{
   margin-top: 60px;
 }
-.subtitle1{
+.subtitle1, .subtitle2, .subtitle3, .subtitle4{
   color: #ffffff;
   background-color: #000;
   font-size: 35px;
   font-weight: 700;
   line-height: 50px;
   margin-top: 115px;
-  width: 80%;
-  padding: 0px 80px 0px 20px;
+  //width: 80%;
+  padding: 0 80px 0 20px;
+
 }
+.subtitle1{
+  margin-top: 115px;
+  width: 80%;
+}
+.subtitle2{
+  margin-top: 85px;
+  width: 40%;
+}
+.subtitle3{
+   color: #000;
+   background-color: #ffffff;
+   line-height: 40px;
+   margin-left: 63px;
+   margin-top: 63px;
+   width: 18%;
+ }
 .contact1{
-  color: #000;
   font-size: 26px;
   font-weight: 500;
   margin-top: 50px;
@@ -95,16 +104,14 @@ body {
   margin-top: 10px;
   margin-block-end: 5px;
 }
-.bg{
-  background-color: #ebebeb;
-  min-height: 100%;
-  padding: 40px;
-}
-.right-col {
-  background-color: #fff;
-  width: 885px;//ширини для колонки
-  height: auto;
-}
+.contact3{
+   color: #ffffff;
+   font-size: 26px;
+   font-weight: 500;
+   margin-top: 30px;
+   margin-left: 63px;
+ }
+
 .imag {
   width:100%;
   height: auto;
@@ -116,45 +123,40 @@ body {
   background-color: #071117;
   color:white;
 }
-.subtitle3{
-  color: #000;
-  background-color: #ffffff;
-  font-size: 35px;
-  line-height: 40px;
-  margin-left: 63px;
-  margin-top: 63px;
-  width: 18%;
-  padding: 0px 0px 0px 20px;
+.skill1, .skill2{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
-.contact3{
-  color: #ffffff;
-  font-size: 26px;
-  font-weight: 500;
-  margin-top: 30px;
-  margin-left: 63px;
+.skill1{
+  width: 100%;
+  align-items: flex-start;
+  //padding: 60px;
+  margin-top: 100px;
 }
-.subtitle2{
-  color: #ffffff;
-  background-color: #000;
-  font-size: 35px;
-  font-weight: 700;
-  line-height: 50px;
-  margin-top: 85px;
-  width: 40%;
-  padding: 0px 80px 0px 20px;
+.skill2{
+  width: 60%;
+  height: auto;
 }
-.skill{
+.subtitle4{
+  margin-top: -2%;
+  width: 36%;
+  padding: 0 20px 0 30px;
+}
+.contact4{
   color: lightslategray;
   font-size: 27px;
-  margin-top: 20px;
-  margin-block-end: 5px;
+  margin-top: 5%;
+  line-height: 200%; //line-height: 55px;
 }
+.skills-section{
+   margin-top: 3%;
+ }
 .skill span {
-  //color: #333;
- // width: 150px;
+  color: #333;
+  width: 150px;
 }
 .skill-bar {
-  background-color: #ddd;
   width: 30%;
   height: 8px;
   border-radius: 5px;
