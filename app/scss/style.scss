@@ -65,14 +65,15 @@ body {
 .inf1{
   margin-top: 60px;
 }
-.subtitle1, .subtitle2, .subtitle3, .subtitle4{
+.subtitle1, .subtitle2, .subtitle3, .subtitle4, .subtitle5{
   color: #ffffff;
   background-color: #000;
   font-size: 35px;
   font-weight: 700;
-  line-height: 50px;
+  //line-height: 50px;
   margin-top: 115px;
   //width: 80%;
+  line-height: 150%;
   padding: 0 80px 0 20px;
 
 }
@@ -110,6 +111,7 @@ body {
    font-weight: 500;
    margin-top: 30px;
    margin-left: 63px;
+  line-height: 140%;
  }
 
 .imag {
@@ -127,27 +129,48 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-top: -3.5%;
 }
 .skill1{
-  width: 100%;
+  width: 37%;
   align-items: flex-start;
   //padding: 60px;
-  margin-top: 100px;
+  //margin-top: 100px;
 }
 .skill2{
-  width: 60%;
-  height: auto;
+  width: 62%;
+  margin-top: 19%;
+  margin-left: -10px ;
+ // line-height: 200%;
+  //height: auto;
+  //height: 15%;
 }
 .subtitle4{
-  margin-top: -2%;
-  width: 36%;
-  padding: 0 20px 0 30px;
+  //margin-top: -2%;
+  //line-height: 150%;
+  width: 100%;
+  padding: 0 25px 0 30px;
 }
 .contact4{
   color: lightslategray;
-  font-size: 27px;
-  margin-top: 5%;
+  //font-palette: dark;
+  font-size: 28px;
+  margin-top: 12%;
   line-height: 200%; //line-height: 55px;
+}
+.progress-bar {
+  width: 48%; /* Ширина всієї смужки */
+  height: 10px; /* Висота смужки */
+  background-color: #e0e0e0; /* Колір фону */
+  margin-bottom: 15px; /* Відступ між смужками */
+  //line-height: 200%;
+ // height: 15%;
+  margin-top: 5.5%;
+  //overflow: hidden;
+}
+.progress {
+  height: 100%;
+  background-color: #000; /* Колір прогресу */
 }
 .skills-section{
    margin-top: 3%;
@@ -163,9 +186,16 @@ body {
   margin-left: 400px;
   overflow: hidden;
 }
-
+.skills-columns {
+  display: flex;
+  justify-content: space-between;
+}
 .level {
   background-color: #000;
   height: 100%;
   //border-radius: 5px;
+}
+.subtitle5{//sub3
+  margin-top: 85px;
+  width: 40%;
 }
