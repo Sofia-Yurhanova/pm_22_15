@@ -2,6 +2,14 @@
   max-width: 100%;
   max-height: 100%;
 }
+:root {
+  --black: #000;
+  --white: #ffffff;
+  --light-grey: darkslategray;
+  --dark-grey: #333;
+  --level: #e0e0e0;
+  --dark-blue: #071117;
+}
 strong {
   font-weight: 900;
 }
@@ -11,43 +19,42 @@ strong {
   padding: 0;
   box-sizing: border-box;
 }
-//Власні стилі
 body {
   font-family: 'Montserrat', sans-serif;
-  color: #000;
-  background-color: #ffffff;
+  color: var(--black);
+  background-color: var(--white);
   overflow-x: hidden;
 }
 .resume {
    width: 100%;
    height: 100%;
    margin: 0 auto;
-  // background-color: white;
    border-radius: 8px;
    padding: 0;
    display: flex;
    flex-direction: row;
+  .left-col, .right-col {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .left-col {
+    width: 100%;
+    align-items: flex-start;
+    padding: 60px;
+    margin-top: 100px;
+  }
+  .right-col {
+    width: 885px;
+    height: auto;
+  }
  }
-.left-col, .right-col {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-.left-col {
-      width: 100%;
-      align-items: flex-start;
-      padding: 60px;
-      margin-top: 100px;
-}
-.right-col {
-   width: 885px;
-   height: auto;
- }
+
 .header{
   margin-top: -150px;
 }
 .name, .surname {
-  color: #000;
+  color: var(--black);
   font-size: 100px;
   font-weight: 400;
 }
@@ -55,7 +62,7 @@ body {
   margin-top: -20px;
 }
 .title{
-    color: #000;
+  color: var(--black-color);
     font-size: 45px;
     font-weight: 550;
   }
@@ -66,8 +73,8 @@ body {
   margin-top: 60px;
 }
 .subtitle1, .subtitle2, .subtitle3, .subtitle4, .subtitle5{
-  color: #ffffff;
-  background-color: #000;
+  color: var(--white);
+  background-color: var(--black);
   font-size: 35px;
   font-weight: 700;
   //line-height: 50px;
@@ -75,45 +82,43 @@ body {
   //width: 80%;
   line-height: 150%;
   padding: 0 80px 0 20px;
-
+  &.subtitle1{
+    margin-top: 115px;
+    width: 80%;
+  }
+  &.subtitle2{
+    margin-top: 85px;
+    width: 40%;
+  }
+  &.subtitle3{
+    color: var(--black);
+    background-color: var(--white);
+    line-height: 40px;
+    margin-left: 63px;
+    margin-top: 63px;
+    width: 18%;
+  }
 }
-.subtitle1{
-  margin-top: 115px;
-  width: 80%;
-}
-.subtitle2{
-  margin-top: 85px;
-  width: 40%;
-}
-.subtitle3{
-   color: #000;
-   background-color: #ffffff;
-   line-height: 40px;
-   margin-left: 63px;
-   margin-top: 63px;
-   width: 18%;
- }
 .contact1{
   font-size: 26px;
   font-weight: 500;
   margin-top: 50px;
 }
 .contact2{
-  color: darkslategray;
+  color: var(--light-grey);
   font-size: 25px;
   font-weight: 500;
   margin-top: 10px;
   margin-block-end: 5px;
 }
 .contact3{
-   color: #ffffff;
+   color: var(--white);
    font-size: 26px;
    font-weight: 500;
    margin-top: 30px;
    margin-left: 63px;
   line-height: 140%;
  }
-
 .imag {
   width:100%;
   height: auto;
@@ -122,79 +127,67 @@ body {
 .dark_blue{
   width: auto;
   height: 335px;
-  background-color: #071117;
-  color:white;
+  background-color: var(--dark-blue);
+  color:var(--white);
+}
+/*.skills-section{
+  margin-top: 3%;
+ }*/
+.skills-columns {
+  display: flex;
+  justify-content: space-between;
 }
 .skill1, .skill2{
   display: flex;
   flex-direction: column;
   justify-content: center;
-  margin-top: -3.5%;
-}
-.skill1{
-  width: 37%;
-  align-items: flex-start;
-  //padding: 60px;
-  //margin-top: 100px;
-}
-.skill2{
-  width: 62%;
-  margin-top: 19%;
-  margin-left: -10px ;
- // line-height: 200%;
-  //height: auto;
-  //height: 15%;
+ margin-top: -3.5%;
+  &.skill1{
+    width: 37%;
+    align-items: flex-start;
+  }
+  &.skill2{
+    width: 62%;
+    margin-top: 19%;
+    margin-left: -10px ;
+  }
 }
 .subtitle4{
-  //margin-top: -2%;
-  //line-height: 150%;
   width: 100%;
   padding: 0 25px 0 30px;
 }
 .contact4{
- // color: lightslategray;
- color: darkslategrey;
-  //font-palette: dark;
+ color: var(--light-grey);
   font-size: 28px;
   margin-top: 12%;
   line-height: 200%; //line-height: 55px;
 }
 .progress-bar {
-  width: 48%; /* Ширина всієї смужки */
-  height: 10px; /* Висота смужки */
- background-color: #e0e0e0; /* Колір фону */
-  margin-bottom: 15px; /* Відступ між смужками */
-  //line-height: 200%;
- // height: 15%;
+  width: 48%;
+  height: 10px;
+ background-color: var(--level);
+  margin-bottom: 15px;
   margin-top: 5.5%;
-  //overflow: hidden;
 }
 .progress {
   height: 100%;
-  background-color: #000; /* Колір прогресу */
+  background-color: var(--black);
 }
-.skills-section{
-   margin-top: 3%;
- }
-.skill span {
-  color: #333;
-  width: 150px;
-}
-.skill-bar {
-  width: 30%;
-  height: 8px;
-  border-radius: 5px;
-  margin-left: 400px;
-  overflow: hidden;
-}
-.skills-columns {
-  display: flex;
-  justify-content: space-between;
-}
-.level {
-  background-color: #000;
+//.skill span {
+//  color: #333;
+//  width: 150px;
+//}
+//.skill-bar {
+//  width: 30%;
+//  height: 8px;
+//  border-radius: 5px;
+//  margin-left: 400px;
+//  overflow: hidden;
+//}
+/*.level {
+  background-color: var(--black);
   height: 100%;
-}
+}*/
 .subtitle5{
   margin-top: 80px;
   width: 37%;
@@ -202,7 +195,7 @@ body {
   letter-spacing: 4px;
 }
 .contact5 {
-  color: darkslategrey;
+  color: var(--dark-grey);
   margin-top: 6%;
   font-size: 28px;
  }
