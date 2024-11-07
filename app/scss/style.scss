@@ -152,7 +152,8 @@ body {
   padding: 0 25px 0 30px;
 }
 .contact4{
-  color: lightslategray;
+ // color: lightslategray;
+ color: darkslategrey;
   //font-palette: dark;
   font-size: 28px;
   margin-top: 12%;
@@ -161,7 +162,7 @@ body {
 .progress-bar {
   width: 48%; /* Ширина всієї смужки */
   height: 10px; /* Висота смужки */
-  background-color: #e0e0e0; /* Колір фону */
+ background-color: #e0e0e0; /* Колір фону */
   margin-bottom: 15px; /* Відступ між смужками */
   //line-height: 200%;
  // height: 15%;
@@ -193,9 +194,23 @@ body {
 .level {
   background-color: #000;
   height: 100%;
-  //border-radius: 5px;
 }
-.subtitle5{//sub3
-  margin-top: 85px;
-  width: 40%;
+.subtitle5{
+  margin-top: 80px;
+  width: 37%;
+  padding: 0 1px 0 26px;
+  letter-spacing: 4px;
+}
+.contact5 {
+  color: darkslategrey;
+  margin-top: 6%;
+  font-size: 28px;
+ }
+.company{
+  margin-top: 10px;
+  font-size: 23px;
+}
+.description{
+  margin-top: 20px;
+  font-size: 26px;
 }
