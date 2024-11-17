@@ -74,32 +74,19 @@ body {
   margin-top: 60px;
   padding: 0 0 7% 0;
 }
-.subtitle1, .subtitle2, .subtitle3, .subtitle4, .subtitle5{
+.subtitle1, .subtitle3, .subtitle4{
   color: var(--white);
   background-color: var(--black);
   font-size: 35px;
   font-weight: 700;
-  //line-height: 50px;
-  //margin-top: 115px;
-  //width: 80%;
   line-height: 150%;
   padding: 0 80px 0 20px;
-  &.subtitle1{
-    //margin-top: 115px;
-    width: 80%;
-  }
-  &.subtitle2{
-    margin-top: 85px;
-    width: 40%;
-  }
+  width: 80%;
   &.subtitle3{
     color: var(--black);
     background-color: var(--white);
     line-height: 40px;
     margin-left: 63px;
-    //margin-top: -100px;
-    //margin-top: 30px;/*63px;*/
-    //width: 18%;
     width: 55%;
 
   }
@@ -123,7 +110,6 @@ body {
    margin-top: 30px;
    margin-left: 63px;
   line-height: 140%;
-  //padding: 0 0 35px 0;
  }
 .imag {
   width:100%;
@@ -131,7 +117,7 @@ body {
   object-fit: cover;
 }
 .space{
-  padding: 0 0 14% 0;
+  padding: 0 0 20% 0;
 }
 .dark_blue{
   width: auto;
@@ -140,21 +126,17 @@ body {
   color:var(--white);
   padding: 0 0 7% 0;
 }
-/*.skills-section{
-  margin-top: 3%;
- }*/
 .col12 {
   display: flex;
   justify-content: left;
-  //margin-top: 7%;
   padding: 7% 20% 0 0;
 }
-.col34 {
+.col56 {
   display: flex;
-  //margin-top: 7%;
-  padding: 7% 100% 0 0;
-  justify-content: space-between;
+  margin-top: 10%;
+  justify-content:left;
 }
+
 .skills-columns {
   display: flex;
   justify-content: space-between;
@@ -163,23 +145,18 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
- margin-top: -3.5%;
-  &.skill1{
-    width: 37%;
-    align-items: flex-start;
-  }
+  //width: 37%;
   &.skill2{
     width: 62%;
-    margin-top: 19%;
     margin-left: -10px ;
+    margin-top: 2%;
   }
 }
 .subtitle4{
-  width: 100%;
- // height: auto;
+  width: 315px;
   padding: 0 25px 0 30px;
-  //width: 40%;
 }
+
 .contact4{
  color: var(--light-grey);
   font-size: 28px;
@@ -196,11 +173,6 @@ body {
 .progress {
   height: 100%;
   background-color: var(--black);
-}
-.subtitle5{
-  letter-spacing: 4px;
-  width: 100%;
-  padding: 0 25px 0 30px;
 }
 .contact5 {
   color: var(--dark-grey);
@@ -230,10 +202,8 @@ body {
   position: static;
   width: 100%;
   height: 100%;
-  //border: 1px solid white;
 }
 .y {
-  //color:white;
   font-size: 200%;
 }
 .u {
