@@ -129,7 +129,9 @@ body {
 .col12 {
   display: flex;
   justify-content: left;
-  padding: 7% 20% 0 0;
+  margin-top: 10%;
+
+  //padding: 10% 20% 0 0;
 }
 .col56 {
   display: flex;
@@ -188,8 +190,7 @@ body {
 .progress {
   height: 100%;
   background-color: var(--black);
-  //width: 0%; /* Початкове значення ширини */
-  transition: width 0.5s ease; /* Для плавної анімації */
+  transition: width 0.5s ease;
 }
 
 .contact5 {
@@ -217,6 +218,7 @@ body {
   cursor: pointer;
   display: inline-block;
   position: static;
+
   width: 100%;
   height: 100%;
 }
