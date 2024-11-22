@@ -52,7 +52,7 @@ body {
  }
 
 .header{
-  margin-top: 35%;
+  margin-top: 40%;
 }
 .name, .surname {
   color: $black;
@@ -66,11 +66,7 @@ body {
     font-size: 45px;
     font-weight: 550;
   }
-.under_header{
-  margin-top: 42%;
-}
 .inf1{
-  margin-top: 60px;
   padding: 0 0 7% 0;
 }
 .subtitle1, .subtitle3, .subtitle4{
@@ -123,23 +119,23 @@ body {
   padding: 0 0 7% 0;
 }
 
-@mixin small-col($dis,$jus,$mar){
+@mixin placing($dis,$jus,$mar){
   display: $dis;
   justify-content: $jus;
   margin-top: $mar;
 }
 .col12 {
-  @include small-col(flex,left,10%);
+  @include placing(flex,left,10%);
 }
 .col56 {
-  @include small-col(flex,left,10%);
+  @include placing(flex,left,10%);
 }
 
 .skills-columns {
-  @include small-col(flex,space-between);
+  @include placing(flex,space-between,0);
 }
 .skill1, .skill2{
-  @include small-col(flex,center);
+  @include placing(flex,center,0);
   flex-direction: column;
   &.skill2{
     width: 62%;
