@@ -162,6 +162,9 @@ body {
   overflow: hidden;
   cursor: pointer;
 }
+.progress-bar.locked {
+  cursor: not-allowed; // Змінюємо курсор для заблокованого стану
+}
 .progress {
   height: 100%;
   background-color: $black;
@@ -190,6 +193,7 @@ body {
   position: static;
   width: 100%;
   height: 100%;
+  transition: transform 0.3s ease;
 }
 
 @mixin but-con($border-color,$wid){
@@ -208,6 +212,7 @@ body {
   transform: translate(-50%, -75%) rotate(-45deg);
   border-left: 4px solid $border-color;
   border-bottom: 4px solid $border-color;
+  transition: transform 0.3s ease;
 }
 .button-container-b {
   @include but-con($black,50px);
