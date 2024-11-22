@@ -11,7 +11,6 @@ function showOrHide(block) {
         block.style.maxHeight = "300vh";
     }
 }
-
 document.addEventListener("DOMContentLoaded", () => {
     const progressBars = document.querySelectorAll(".progress");
 

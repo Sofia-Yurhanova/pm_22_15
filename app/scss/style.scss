@@ -2,14 +2,12 @@
   max-width: 100%;
   max-height: 100%;
 }
-:root {
-  --black: #000;
-  --white: #ffffff;
-  --light-grey: darkslategray;
-  --dark-grey: #333;
-  --level: #e0e0e0;
-  --dark-blue: #071117;
-}
+  $black: #000;
+  $white: #ffffff;
+  $light-grey: darkslategray;
+  $dark-grey: #333;
+  $level: #e0e0e0;
+  $dark-blue: #071117;
 strong {
   font-weight: 900;
 }
@@ -21,41 +19,43 @@ strong {
 }
 body {
   font-family: 'Montserrat', sans-serif;
-  color: var(--black);
-  background-color: var(--white);
+  color: $black;
+  background-color: $white;
   overflow-x: hidden;
+}
+@mixin col($wid){
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: $wid;
+}
+@mixin small-text($mar,$fon){
+  margin-top: $mar;
+  font-size: $fon;
 }
 .resume {
    width: 100%;
    height: 100%;
-   margin: 0 auto;
    border-radius: 8px;
-   padding: 0;
    display: flex;
    flex-direction: row;
-  .left-col, .right-col {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-  }
   .left-col {
-    width: 100%;
+    @include col(100%);
     align-items: flex-start;
     padding: 60px;
     margin-top: 100px;
   }
   .right-col {
-    width: 885px;
+    @include col(885px);
     height: auto;
   }
  }
 
 .header{
- // margin-top: -300px;
   margin-top: 35%;
 }
 .name, .surname {
-  color: var(--black);
+  color: $black;
   font-size: 100px;
   font-weight: 400;
 }
@@ -63,7 +63,6 @@ body {
   margin-top: -20px;
 }
 .title{
-  color: var(--black-color);
     font-size: 45px;
     font-weight: 550;
   }
@@ -75,16 +74,16 @@ body {
   padding: 0 0 7% 0;
 }
 .subtitle1, .subtitle3, .subtitle4{
-  color: var(--white);
-  background-color: var(--black);
+  color: $white;
+  background-color: $black;
   font-size: 35px;
   font-weight: 700;
   line-height: 150%;
   padding: 0 80px 0 20px;
   width: 80%;
   &.subtitle3{
-    color: var(--black);
-    background-color: var(--white);
+    color: $black;
+    background-color: $white;
     line-height: 40px;
     margin-left: 63px;
     width: 55%;
@@ -92,25 +91,22 @@ body {
   }
 }
 .contact1{
-  font-size: 26px;
   font-weight: 500;
-  margin-top: 50px;
+  @include small-text(50px,26px);
 }
 .contact2{
-  color: var(--light-grey);
-  font-size: 25px;
+  color: $light-grey;
   font-weight: 500;
-  margin-top: 10px;
+  @include small-text(10px,25px);
   margin-block-end: 5px;
 }
 .contact3{
-   color: var(--white);
-   font-size: 26px;
+   color: $white;
    font-weight: 500;
-   margin-top: 30px;
    margin-left: 63px;
   line-height: 140%;
- }
+  @include small-text(30px,26px);
+}
 .imag {
   width:100%;
   height: auto;
@@ -122,32 +118,29 @@ body {
 .dark_blue{
   width: auto;
   height: 100%;
-  background-color: var(--dark-blue);
-  color:var(--white);
+  background-color: $dark-blue;
+  color:$white;
   padding: 0 0 7% 0;
 }
-.col12 {
-  display: flex;
-  justify-content: left;
-  margin-top: 10%;
 
-  //padding: 10% 20% 0 0;
+@mixin small-col($dis,$jus,$mar){
+  display: $dis;
+  justify-content: $jus;
+  margin-top: $mar;
+}
+.col12 {
+  @include small-col(flex,left,10%);
 }
 .col56 {
-  display: flex;
-  margin-top: 10%;
-  justify-content:left;
+  @include small-col(flex,left,10%);
 }
 
 .skills-columns {
-  display: flex;
-  justify-content: space-between;
+  @include small-col(flex,space-between);
 }
 .skill1, .skill2{
-  display: flex;
+  @include small-col(flex,center);
   flex-direction: column;
-  justify-content: center;
-  //width: 37%;
   &.skill2{
     width: 62%;
     margin-left: -10px ;
@@ -158,112 +151,77 @@ body {
   width: 315px;
   padding: 0 25px 0 30px;
 }
-
 .contact4{
- color: var(--light-grey);
-  font-size: 28px;
-  margin-top: 12%;
+ color: $light-grey;
+  @include small-text(12%,28px);
   line-height: 200%; //line-height: 55px;
 }
-/*.progress-bar {
-  width: 48%;
-  height: 10px;
- background-color: var(--level);
-  margin-bottom: 15px;
-  margin-top: 5.5%;
-}
-.progress {
-  height: 100%;
-  background-color: var(--black);
-}*/
 .progress-bar {
   width: 48%;
   height: 10px;
-  background-color: var(--level);
+  background-color: $level;
   margin-bottom: 15px;
   margin-top: 5.5%;
   position: relative;
   overflow: hidden;
   cursor: pointer;
 }
-
 .progress {
   height: 100%;
-  background-color: var(--black);
+  background-color: $black;
   transition: width 0.5s ease;
 }
 
 .contact5 {
-  color: var(--dark-grey);
-  margin-top: 6%;
-  font-size: 28px;
- }
-.company{
-  margin-top: 10px;
-  font-size: 23px;
-}
-.description{
-  margin-top: 20px;
-  font-size: 26px;
+  color: $dark-grey;
+  @include small-text(6%,28px);
 }
 
+.company{
+  @include small-text(10px,23px);
+}
+.description{
+  @include small-text(20px,26px);
+}
 .roll-block {
   max-height: 0;
-  //overflow: visible;
   overflow: hidden;
   transition: max-height 0.5s ease-in-out;
-  //padding: 0 0 7% 0;
 }
 .roll {
   cursor: pointer;
   display: inline-block;
   position: static;
-
   width: 100%;
   height: 100%;
 }
-.y {
-  font-size: 200%;
-}
-.u {
-  font-size: 250%;
-}
 
-.button-container {
+@mixin but-con($border-color,$wid){
   display: inline-block;
   position: relative;
-  width: 50px;
-  height: 50px;
-  border: 2px solid black;
+  width: $wid;
+  height: $wid;
+  border: 2px solid $border-color;
 }
-
-.checkmark {
-position: relative;
-//position: absolute;
-  width: 60%;
-  height: 60%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -75%) rotate(-45deg);
-  border-left: 4px solid black;
-  border-bottom: 4px solid black;
-}
-.button-container1 {
-  //display: inline-block;
-  display: flex;
+@mixin check($border-color,$wid){
   position: relative;
-  width: 50px;
-  height: 50px;
-  border: 2px solid white;
-}
-.checkmark1 {
-  //position: relative;
-  position: absolute;
-  width: 60%;
-  height: 60%;
+  width: $wid;
+  height: $wid;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -75%) rotate(-45deg);
-  border-left: 4px solid white;
-  border-bottom: 4px solid white;
+  border-left: 4px solid $border-color;
+  border-bottom: 4px solid $border-color;
+}
+.button-container-b {
+  @include but-con($black,50px);
+}
+.checkmark-b {
+@include check($black,60%)
+}
+.button-container-w {
+  @include but-con($white,40px);
+}
+.checkmark-w {
+  @include check($white,50%)
 }
