@@ -69,6 +69,9 @@ body {
 .inf1{
   padding: 0 0 7% 0;
 }
+.education{
+  padding: 0 0 7% 0;
+}
 .subtitle1, .subtitle3, .subtitle4{
   color: $white;
   background-color: $black;
@@ -95,6 +98,20 @@ body {
   font-weight: 500;
   @include small-text(10px,25px);
   margin-block-end: 5px;
+}
+.year{
+  font-weight: 500;
+  @include small-text(50px,26px);
+}
+.degree{
+  color: $light-grey;
+  font-weight: 500;
+  @include small-text(10px,25px);
+  margin-block-end: 5px;
+}
+.institution{
+  font-weight: 500;
+  @include small-text(10px,26px);
 }
 .contact3{
    color: $white;
@@ -218,7 +235,7 @@ body {
   @include but-con($black,50px);
 }
 .checkmark-b {
-@include check($black,60%)
+  @include check($black,60%)
 }
 .button-container-w {
   @include but-con($white,40px);

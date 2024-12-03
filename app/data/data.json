@@ -1,0 +1,23 @@
+{
+  "compilerOptions": {
+    "target": "es2016",
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "strict": true,
+    "skipLibCheck": true
+  },
+  "education": [
+    {
+      "year": "2005 - 2007",
+      "degree": "Degree/Major Name",
+      "institution": "Your College name here"
+    },
+    {
+      "year": "2005 - 2007",
+      "degree": "Degree/Major Name",
+      "institution": "Your College name here"
+    }
+  ]
+}
+

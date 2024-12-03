@@ -41,6 +41,14 @@ gulp.task('html', () => {
         .pipe(dest('dist'));
 });
 
+gulp.task('json', () => {
+    return src('app/data/**/*.json')
+        .pipe(file_include({
+            prefix: '@@',
+            basepath: '@file'}))
+        .pipe(dest('dist/data'));
+});
+
 // Compress images
 gulp.task('img', async () => {
     const imagemin = await getImagemin();
@@ -55,6 +63,7 @@ gulp.task('watch', () => {
     gulp.watch('app/js/*.js', gulp.series('uglify'));
     gulp.watch('app/index.html', gulp.series('html'));
     gulp.watch('app/html/*.html', gulp.series('html'));
+    gulp.watch('app/data/*.json', gulp.series('json'));
 });
 
 // Update browser
@@ -68,4 +77,5 @@ gulp.task('browser-sync', () => {
 });
 
 // Default task
-gulp.task('default', gulp.series('html', 'sass', 'uglify', 'img', gulp.parallel('browser-sync', 'watch')));
+gulp.task('default', gulp.series('html', 'sass', 'uglify', 'img', 'json', gulp.parallel('browser-sync', 'watch')));
+

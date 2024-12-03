@@ -16,41 +16,6 @@ function showOrHide(block, arrow) {
     }
 }
 
-
-/*document.addEventListener("DOMContentLoaded", () => {
-    const progressBars = document.querySelectorAll(".progress");
-
-    progressBars.forEach((progress) => {
-        const targetWidth = parseInt(progress.getAttribute("data-target-width"), 10);
-        let currentWidth = 0;
-        const increment = 1;
-        let isAnimating = true;
-        let isLocked = false;
-
-        const animateProgress = () => {
-            if (isAnimating && currentWidth < targetWidth) {
-                currentWidth += increment;
-                progress.style.width = `${currentWidth}%`;
-                requestAnimationFrame(animateProgress);
-            }
-        };
-
-        animateProgress();
-
-        progress.parentElement.addEventListener("mousemove", (e) => {
-            const barWidth = progress.parentElement.offsetWidth;
-            const mouseX = e.offsetX;
-            currentWidth = Math.min((mouseX / barWidth) * 100, 100);
-            isLocked = !isLocked; // Перемикання стану блокування
-            progress.parentElement.classList.toggle("locked", isLocked);
-        });
-
-        progress.parentElement.addEventListener("click", () => {
-            progress.style.width = `${currentWidth}%`;
-        });
-    });
-});*/
-
 document.addEventListener("DOMContentLoaded", () => {
     const progressBars = document.querySelectorAll(".progress");
 
@@ -96,38 +61,61 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     });
 });
-
-/*
-document.addEventListener("DOMContentLoaded", () => {
-    const progressBars = document.querySelectorAll(".progress");
-
-    progressBars.forEach((progress) => {
-        // Початкова фіксація ширини з HTML
-        let currentWidth = parseInt(progress.style.width, 10) ||
-            parseInt(progress.getAttribute("data-target-width"), 10) ||
-            0;
-        let hoverWidth = currentWidth; // Поточне значення при наведенні
-        let isLocked = true; // Фіксація початкового стану
-
-        // Встановлюємо початкову ширину з HTML
-        progress.style.width = `${currentWidth}%`;
-
-        // Наведення: оновлюємо ширину без фіксації
-        progress.parentElement.addEventListener("mousemove", (e) => {
-            if (!isLocked) {
-                const barWidth = progress.parentElement.offsetWidth;
-                const mouseX = e.offsetX;
-                hoverWidth = Math.min((mouseX / barWidth) * 100, 100); // Обчислюємо %
-                progress.style.width = `${hoverWidth}%`; // Показуємо зміну
+function fetchData(url, options = {}) {
+    return fetch(url, options)
+        .then(response => {
+            if (!response.ok) {
+                throw new Error("Помилка завантаження даних");
             }
+            return response.json();
+        })
+        .then(data => {
+            console.log("Отримані дані:", data);
+            return data;
+        })
+        .catch(error => {
+            console.error("Помилка:", error);
+            throw error;
         });
+}
 
-        // Клік: фіксуємо поточне значення
-        progress.parentElement.addEventListener("click", () => {
-            isLocked = false; // Дозволяємо зміни
-            currentWidth = hoverWidth; // Фіксуємо значення
-            progress.style.width = `${currentWidth}%`; // Оновлюємо відображення
-        });
-    });
-});
-*/
+// Асинхронна функція для отримання даних
+async function getData() {
+    try {
+        const data = await fetchData("http://localhost:8080/data/data.json", { cache: "no-store" });
+        console.log("Отримані дані:", data);
+        renderData(data);
+    } catch (error) {
+        console.error("Помилка при отриманні даних:", error);
+    }
+}
+
+// Функція для рендерингу даних
+function renderData(data) {
+    if (data.education && Array.isArray(data.education)) {
+        renderEducation(data.education);
+    } else {
+        console.error("Дані education відсутні або некоректні:", data.education);
+    }
+}
+
+// Функція для рендерингу секції "Освіта"
+function renderEducation(education) {
+    const container = document.querySelector(".education.roll-block");
+    container.innerHTML = ""; // Очищення контейнера
+
+    const educationHTML = education.map(item => `
+        <div class="education-item">
+             
+            
+             <p class="year">${item.year}</p>
+             <p class="degree"><strong>${item.degree}</strong></p>
+             <p class="institution">${item.institution}</p>
+        </div>
+    `).join('');
+
+    container.innerHTML = educationHTML;
+}
+
+// Виклик функції для отримання та рендерингу даних
+getData().then(res => console.log("Результат:", res));
